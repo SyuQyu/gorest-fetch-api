@@ -1,0 +1,15 @@
+#layout-default {
+    @apply relative flex flex-col h-auto min-h-screen;
+
+    header.header {
+        @apply flex flex-row justify-between items-center w-full h-28 bg-red-200 px-20 backdrop-blur-[10px];
+    }
+
+    main.main {
+        @apply flex flex-col h-full min-h-screen max-w-screen-xl mx-auto w-full py-20;
+    }
+
+    footer.footer {
+        @apply flex justify-center items-center w-full bg-red-400 py-8;
+    }
+}
