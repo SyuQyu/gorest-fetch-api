@@ -308,6 +308,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@types/aos@^3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@types/aos/-/aos-3.0.6.tgz#eec087fcb0d8e5d79b6e65bb49cd8dc361a99585"
+  integrity sha512-H6RbMQXco8pZWhh7Wjpqrd9ISVwH5EId0hM5vxebcDiK6HgIizbVj1718Q8PQLQ7cVBsxTK0rbVy0T3dR6eoow==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
