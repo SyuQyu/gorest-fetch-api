@@ -6,7 +6,7 @@
     }
 
     main.main {
-        @apply flex flex-col h-full min-h-screen max-w-screen-xl mx-auto w-full py-20;
+        @apply flex flex-col h-full min-h-screen w-full py-20 sm:px-12 px-6 ;
     }
 
     footer.footer {
