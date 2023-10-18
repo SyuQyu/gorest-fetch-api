@@ -26,7 +26,7 @@ export default function Page(slug: any) {
     }
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [data])
 
     return (
         <div className={clsx('flex flex-col w-full')}>

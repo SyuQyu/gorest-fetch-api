@@ -22,7 +22,7 @@ export default function Page() {
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, [posts])
     return (
         <div className={clsx('flex flex-col w-full')}>
             <div className="flex items-center justify-center flex-col w-full gap-24">
