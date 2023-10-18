@@ -4,10 +4,10 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import { fetchPostDetails } from '@/api/blog'
 import { SimpleCard } from '@/components/common';
-export const metadata = {
-    title: 'Services',
-    description: 'test',
-};
+// export const metadata = {
+//     title: 'Services',
+//     description: 'test',
+// };
 
 export default function Page(slug: any) {
     const [data, setData] = useState<{ post: Post | null, comments: Comment[] | null, user: User | null }>({
