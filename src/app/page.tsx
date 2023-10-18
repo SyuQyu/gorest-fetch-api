@@ -2,10 +2,6 @@
 import { Card, Typography } from '@material-tailwind/react';
 import clsx from 'clsx';
 import { fetchPosts } from '@/api/blog'
-export const metadata = {
-    title: 'Gorest Fetch Api',
-    description: 'test description',
-};
 
 export default async function Page() {
     const posts = await fetchPosts();
