@@ -6,8 +6,8 @@ import DefaultLayout from '@/components/layouts/default-layouts';
 
 export const metadata = {
     title: {
-        default: 'Peluang.co',
-        template: '%s | Peluang.co',
+        default: 'Gorest Fetch Api',
+        template: '%s | Gorest.co',
     },
     description: 'Peluang.co tes desc',
 };
