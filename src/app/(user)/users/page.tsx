@@ -5,12 +5,6 @@ import { useUsers } from '@/context/users/store';
 import { CustomTable, Dialog } from '@/components/common';
 import { Button, Input, Textarea, Typography } from '@material-tailwind/react';
 import { UserPlusIcon } from '@heroicons/react/24/outline';
-
-export const metadata = {
-    title: 'Portfolios',
-    description: 'total description',
-};
-
 export default function Page() {
 
     const initialValues: User = {
