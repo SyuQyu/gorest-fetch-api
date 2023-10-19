@@ -1,12 +1,10 @@
-import { UsersProvider } from '@/context/users/store';
-import clsx from 'clsx';
+import { UsersProvider } from "@/context/users/store";
 
 
 export default function UserLayout({ children }: Props) {
     return (
-            <UsersProvider>
-                {children}
-            </UsersProvider>
+            <UsersProvider>{children}</UsersProvider>
+
     );
 }
 

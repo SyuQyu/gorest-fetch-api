@@ -32,7 +32,6 @@ export const UsersProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 },
             });
             const data = await response.json();
-            console.log(data.data, 'fetch users');
             setUsers(data.data);
         } catch (error) {
             console.error(error);
@@ -45,47 +44,60 @@ export const UsersProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const createUser = async (user: User) => {
         try {
-            const response = await fetch(`${BASE_URL}?access-token=${ACCESS_TOKEN}`, {
+            const response = await fetch(BASE_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${ACCESS_TOKEN ? ACCESS_TOKEN : 'ffea57b5bc7030984ef16cb51577673e38048bb20d142cf61b7b7aa56c560b63'}`,
                 },
                 body: JSON.stringify(user),
             });
             const data = await response.json();
-            console.log(data.data, 'create user');
             setUsers([...users, data.data]);
+            return true;
         } catch (error) {
             console.error(error);
+            return false;
         }
     };
 
-    const readUser = (id: number) => users.find((user) => user.id === id);
+    const readUser = (id: number) => {
+        const user = users.find((user) => user.id === id);
+        return user;
+    };
 
-    const updateUser = async (id: number, user: User) => {
+    const updateUser = async (id: any, user: User) => {
         try {
-            const response = await fetch(`${BASE_URL}/${id}?access-token=${ACCESS_TOKEN}`, {
-                method: "PUT",
+            const response = await fetch(`${BASE_URL}/${id}`, {
+                method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${ACCESS_TOKEN ? ACCESS_TOKEN : 'ffea57b5bc7030984ef16cb51577673e38048bb20d142cf61b7b7aa56c560b63'}`,
                 },
                 body: JSON.stringify(user),
             });
             const data = await response.json();
             setUsers(users.map((user) => (user.id === id ? data.data : user)));
+            return true;
         } catch (error) {
             console.error(error);
+            return false;
         }
     };
 
     const deleteUser = async (id: number) => {
         try {
-            await fetch(`${BASE_URL}/${id}?access-token=${ACCESS_TOKEN}`, {
+            await fetch(`${BASE_URL}/${id}`, {
                 method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${ACCESS_TOKEN ? ACCESS_TOKEN : 'ffea57b5bc7030984ef16cb51577673e38048bb20d142cf61b7b7aa56c560b63'}`,
+                }
             });
             setUsers(users.filter((user) => user.id !== id));
+            return true;
         } catch (error) {
             console.error(error);
+            return false;
         }
     };
 

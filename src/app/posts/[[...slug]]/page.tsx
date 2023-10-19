@@ -1,15 +1,10 @@
 'use client'
 import clsx from 'clsx';
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
-import { fetchPostDetails } from '@/api/blog'
-import { SimpleCard } from '@/components/common';
-// export const metadata = {
-//     title: 'Services',
-//     description: 'test',
-// };
+import { useBlogs } from '@/context/blogs/store';
 
 export default function Page(slug: any) {
+    const { fetchPostDetails } = useBlogs();
     const [data, setData] = useState<{ post: Post | null, comments: Comment[] | null, user: User | null }>({
         post: null,
         comments: null,
@@ -26,7 +21,7 @@ export default function Page(slug: any) {
     }
     useEffect(() => {
         fetchData()
-    })
+    }, [])
 
     return (
         <div className={clsx('flex flex-col w-full')}>

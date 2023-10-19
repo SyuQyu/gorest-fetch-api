@@ -28,7 +28,7 @@ export default function Header({ className }: Props) {
                 color="blue-gray"
                 className="p-1 font-semibold"
             >
-                <Link href="/users-dashboard" className="flex items-center">
+                <Link href="/users" className="flex items-center">
                     User Dashboard
                 </Link>
             </Typography>

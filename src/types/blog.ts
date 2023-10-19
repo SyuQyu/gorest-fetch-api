@@ -14,7 +14,7 @@ interface Comment {
 }
 
 interface User {
-    id?: number;
+    id?: any;
     name: string;
     email: string;
     gender: string;
@@ -30,4 +30,15 @@ interface simpleCardProps {
         body: string;
     }
 }
+
+interface DialogProps {
+    title?: string;
+    children?: React.ReactNode;
+    handleOpen?: (e: any) => void;
+    handleSubmit?: (e: any) => void;
+    open?: boolean | false;
+    setOpen?: any;
+    submitName?: string;
+    className?: any;
+};
 
