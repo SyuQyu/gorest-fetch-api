@@ -1,7 +1,6 @@
 'use client'
 import { Button, Card, Typography } from '@material-tailwind/react';
 import clsx from 'clsx';
-import { fetchPosts } from '@/api/blog'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ImageWithFallback, SimpleCard } from '@/components/common';
